@@ -4,6 +4,8 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class VagaService {
 
@@ -16,7 +18,20 @@ public class VagaService {
             repository.save(new Vaga());
         }
     }
+    public Boolean verificarSeExisteVagaDisponivel(){
+//        Iterable<Vaga> all = repository.findAll();
+//        for(Vaga v: all){
+//            if(!v.isOcupada()){
+//               return true;
+//            }
+//        }
+//        return false;
+        return repository.numeroDisponivel()>0;
+    }
 
 
-
+    public List<Vaga> encontraTodas() {
+        List<Vaga> listaComTodos =  repository.findAll();
+        return listaComTodos;
+    }
 }

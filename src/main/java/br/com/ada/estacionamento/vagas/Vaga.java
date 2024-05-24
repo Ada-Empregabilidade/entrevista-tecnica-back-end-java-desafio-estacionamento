@@ -10,8 +10,8 @@ public class Vaga {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer numero;
     private boolean ocupada;
-    @OneToOne(mappedBy = "vaga")
-    private Carro carro;
+//    @OneToOne(mappedBy = "vaga")
+//    private Carro carro;
 
     public Integer getNumero() {
         return numero;
@@ -29,11 +29,11 @@ public class Vaga {
         this.ocupada = ocupada;
     }
 
-    public Carro getCarro() {
-        return carro;
-    }
-
-    public void setCarro(Carro carro) {
-        this.carro = carro;
-    }
+//    public Carro getCarro() {
+//        return carro;
+//    }
+//
+//    public void setCarro(Carro carro) {
+//        this.carro = carro;
+//    }
 }
